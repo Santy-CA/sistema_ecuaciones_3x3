@@ -1,0 +1,64 @@
+import math
+import numpy as np
+class ecuaciones(object):
+    def __init__(self):
+        
+        self.valores_ec1=[]
+        self.valores_ec2=[]
+        self.valores_ec3=[]
+        matriz=[]
+        self.terminos=[]
+        
+
+        print('---SISTEMAS DE ECUACIONES---\n')
+        print('Ingreso de valores:\n')
+        print('---valores ecuacion 1:')
+        self.x_1=float(input('valor X :'))
+        self.valores_ec1.append(self.x_1)
+        self.y_1=float(input('valor Y :'))
+        self.valores_ec1.append(self.y_1)
+        self.z_1=float(input('valor Z :'))
+        self.valores_ec1.append(self.z_1)
+        self.b_1=float(input('valor independiente :\n'))
+        self.terminos.append(self.b_1)
+      
+        print('---valores ecuacion 2:')
+        self.x_2=float(input('valor X :'))
+        self.valores_ec2.append(self.x_2)
+        self.y_2=float(input('valor Y :'))
+        self.valores_ec2.append(self.y_2)
+        self.z_2=float(input('valor Z :'))
+        self.valores_ec2.append(self.z_2)
+        self.b_2=float(input('valor independiente :\n'))
+        self.terminos.append(self.b_2)
+        
+        print('---valores ecuacion 3:')
+        self.x_3=float(input('valor X :'))
+        self.valores_ec3.append(self.x_3)
+        self.y_3=float(input('valor Y :'))
+        self.valores_ec3.append(self.y_3)
+        self.z_3=float(input('valor Z :'))
+        self.valores_ec3.append(self.z_3)
+        self.b_3=float(input('valor independiente :\n'))
+        self.terminos.append(self.b_3)
+       
+        matriz.append(self.valores_ec1)
+        matriz.append(self.valores_ec2)
+        matriz.append(self.valores_ec3)
+        # print(matriz)
+        sn_matriz=np.array(matriz)
+        # print(sn_matriz)
+        # print(self.terminos)
+        ind_terminos=np.array(self.terminos)
+        # print(ind_terminos)
+        solucion=np.linalg.solve(sn_matriz,ind_terminos)
+        # print(solucion)
+        self.x=solucion[0]
+        self.y=solucion[1]
+        self.z=solucion[2]
+        print('\nResultado de X = ',round(self.x))
+        print('Resultado de Y = ',round(self.y))
+        print('Resultado de Z = ',round(self.z))
+        
+        
+a=ecuaciones()
